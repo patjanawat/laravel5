@@ -49,3 +49,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## How to call laravel by ajax
+$.ajax({
+    url:"http://localhost:8000/login",
+    type:"POST",
+    data:{"username":"user1","password":"pass1"},
+    success: function (el){
+        console.log(el);
+    }
+})

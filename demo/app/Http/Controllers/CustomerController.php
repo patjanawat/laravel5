@@ -50,4 +50,8 @@ class CustomerController extends Controller
                 ['name', '=', $name]
             ])->get();
     }
+
+    public function insert(Request $request){
+        return $request->input["username"];
+    }
 }

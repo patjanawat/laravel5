@@ -24,4 +24,5 @@ Route::get('/user/profile','UserController@profile');
 Route::get('/customer','CustomerController@all');
 Route::get('/customer/{id}','CustomerController@getById');
 Route::get('/customer/{id}/{name}','CustomerController@getByName');
+Route::post('/customer','CustomerController@insert');
 
