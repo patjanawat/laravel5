@@ -20,5 +20,8 @@ Route::get('/users','UserController@users');
 Route::get('/user/profile','UserController@profile');
 
 // For customer
-Route::get('/customer/all','CustomerController@customers');
+// Route::get('/customer/all','CustomerController@customers');
+Route::get('/customer','CustomerController@all');
+Route::get('/customer/{id}','CustomerController@getById');
+Route::get('/customer/{id}/{name}','CustomerController@getByName');
 
