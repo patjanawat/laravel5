@@ -12,7 +12,8 @@ class customerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('customers')->delete();
+        // DB::table('customers')->delete();
+        DB::table('customers')->truncate();
         DB::table('customers')->insert([            
             'name'=>'user1',
             'password'=>'password1',
@@ -26,7 +27,15 @@ class customerSeeder extends Seeder
             'password'=>'password2',
             'created_date'=>Carbon::now(),
             'created_by'=>'Seeder',
-        ]
+        ]        
     );
+
+    DB::table('customers')->insert([            
+        'name'=>'user3',
+        'password'=>'password3',
+        'created_date'=>Carbon::now(),
+        'created_by'=>'Seeder',
+    ]        
+);
     }
 }

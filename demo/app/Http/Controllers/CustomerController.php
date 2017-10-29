@@ -24,7 +24,7 @@ class CustomerController extends Controller
     public function all()
     {
         $all=  cust::all();
-        return $all;
+        // return $all;
 
         $total= $all->count();
         $datas = $all;
@@ -37,7 +37,7 @@ class CustomerController extends Controller
 
     public function getById($id)
     {
-         return  $id;
+         //return  $id;
         
         // configure hidden field in model
         return cust::where('id', $id)->get();
@@ -45,18 +45,9 @@ class CustomerController extends Controller
 
     public function getByName($id, $name)
     {
-        return cust::where('name', '=', $name)->get();
-    }
-
-    public function getCustomers()
-    {
-        return 'x';
-        $results = cust::all();
-        return $results->count();
-        
-        return response()->json([
-            'total'  => $results->count(),
-            "customers"=>$results->get()
-        ]);
+        return cust::where([
+                ['id',$id],
+                ['name', '=', $name]
+            ])->get();
     }
 }
